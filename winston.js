@@ -31,11 +31,30 @@ const logger = winston.createLogger({
     new winstonDaily({
       level: "info", //info 레벨에서
       datePattern: "YYYY-MM-DD", //파일 날짜 형식
-      dirname: logDir, //파일 경로
+      dirname: logDir + "/info", //파일 경로
       filename: `%DATE%.log`, //file 이름 날짜로 저장
       maxFiles: 30, //최근 30일치 로그 파일을 남김
       zippedArchive: true, //아카이브된(저장하여 보관된) 로그 파일을 gzip으로 압축할지 여부
     }),
+    // warn 레벨 로그를 저장할 파일 설정
+    new winstonDaily({
+      level: "warn",
+      datePattern: "YYYY-MM-DD",
+      dirname: logDir + "/warn",
+      filename: `%DATE%.warn.log`, // file 이름 날짜로 저장
+      maxFiles: 30, // 30일치 로그 파일 저장
+      zippedArchive: true,
+    }),
+    // error 레벨 로그를 저장할 파일 설정
+    new winstonDaily({
+      level: "error",
+      datePattern: "YYYY-MM-DD",
+      dirname: logDir + "/error", // error.log 파일은 /logs/error 하위에 저장
+      filename: `%DATE%.error.log`,
+      maxFiles: 30,
+      zippedArchive: true,
+    }),
+
     // //* error 레벨 로그를 저장할 파일 설정 (info에 자동 포함되지만 일부러 따로 빼서 설정)
     // new winstonDaily({
     //     level: 'error', // error 레벨에선

@@ -15,11 +15,11 @@ winston-daily-rotate-file: 로그 파일을 관리해주는 모듈
 날짜별로 로그파일을 관리하게 구분해 주며,
 로그 파일의 최대 크기와 최대 저장 파일 개수 등을 설정가능
 
-# format은 로그의 형식을 지정할 수 있다.
+format은 로그의 형식을 지정할 수 있다.
 
-# json, label, timestamp, printf, simple, combine 등의 다양한 형식으로 지정이 가능하다.
+json, label, timestamp, printf, simple, combine 등의 다양한 형식으로 지정이 가능하다.
 
-# 기본적으로는 JSON 형식으로 기록하지만, combine은 여러 형식을 혼합해서 사용할 때 쓴다.
+기본적으로는 JSON 형식으로 기록하지만, combine은 여러 형식을 혼합해서 사용할 때 쓴다.
 
 timestamp : 날짜 형식 지정
 label : 어플리케이션 이름을 지정
