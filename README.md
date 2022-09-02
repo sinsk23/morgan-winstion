@@ -1,2 +1,2 @@
-# morgan-winstion
+# morgan-winston
 연습용
